@@ -26,7 +26,7 @@ var options = { server: {socketOptions: { keepAlive: 1}}};
 
 // mongoose.connect(connectionString, options);		 // connect to our database
 
-mongoose.connect(process.env.MONGOLAB_URI || mongoURI);
+mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || mongoURI);
 
 app.use(express.static(__dirname + '/app/public'));
 app.use(morgan('dev'));
