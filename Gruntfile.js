@@ -33,6 +33,15 @@ module.exports = function (grunt) {
         watch: {
             files: ['app/*'],
             tasks: ['concat', 'cssmin', 'uglify']
+        },
+        ngtemplates: {
+            app: {
+                src: ['app/public/partials/**.html'],
+                dest: 'app/scripts/templates.js'
+            },
+            options: {
+                module: 'checkInApp'
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
