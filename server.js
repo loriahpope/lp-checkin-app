@@ -20,7 +20,17 @@ var User 	= require('./app/models/user');
 var Authenticate = require('./app/config/passport');
 var Profile = require('./app/controllers/profile');
 
-var options = { server: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}};
+var options = {
+    server: {
+        socketOptions: {
+            keepAlive: 1,
+            connectTimeoutMS: 30000
+        },
+        auto_reconnect: true
+    },
+    user: this.connectionParams.username,
+    pass: this.connectionParams.password
+};
 // var connectionString = 'mongodb://localhost/checkInApp';
 // var connectionString = 'mongodb://lpope101:testdb123@ds157469.mlab.com:57469/heroku_8bhhl165';
 
