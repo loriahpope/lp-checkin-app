@@ -6,6 +6,8 @@
 // call the packages we need
 var express 	= require('express');	 // call express
 var app 		= express();		 // define our app using express
+var mongo = require('mongo');
+var mongodb = require('mongodb');
 var mongoose 	= require('mongoose');
 var mongoURI    = 'mongodb://localhost/checkInApp';
 var morgan = require('morgan');
