@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <h1>Showing data for {{checkIns.length}} total checkins.</h1>
+    </div>
+    <section id="dashboard">
+        <div class="row chart-section">
+            <div class="col-xs-12 col-sm-6">
+                <div id="sentimentChart">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div id="sentimentChartRatings">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="checkIns-list">
+        <div class="col-xs-12">
+            <h2>All Check Ins</h2>
+        </div>
+        <div class="col-xs-12 checkIn-item" ng-repeat="checkIn in checkIns | orderBy : '-created_at'">
+            <div class="col-xs-12">
+                <span class="subtitle">{{checkIn.created_at | date:'EEEE, MMMM dd, yyyy h:mm a'}}</span>
+            </div>
+
+            <div class="col-xs-12">
+                <!--<h4><a href="#/checkIns/{{checkIn._id}}">{{checkIn.title}}</a></h4>-->
+                <h4>{{checkIn.title}}</h4>
+            </div>
+
+            <div class="col-xs-6">
+                <span>This check-in has a <strong ng-class="{'positive': checkIn.sentimentRating == 'Positive', 'neutral': checkIn.sentimentRating == 'Neutral', 'negative': checkIn.sentimentRating == 'Negative'}">{{checkIn.sentimentRating | lowercase}}</strong> sentiment rating.</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+

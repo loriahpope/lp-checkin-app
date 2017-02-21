@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8 page-align">
+            <h1>{{headline}}</h1>
+            <h4 class="subtitle">{{tagline}}</h4>
+            <form name="checkInForm" class="form-inline">
+                <div class="form-group col-xs-12 no-pad" style="margin:10px 0">
+                    <input name="status" type="text" class="form-control" ng-model="formData.title" placeholder="Today was actually a pretty good day!" maxlength="{{maxlength}}" ng-maxlength="{{maxlength}}">
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary" ng-disabled="!formData.title" ng-click="createCheckIn()">Check In</button>
+                </div>
+            </form>
+            <div id="circle1" class="circle">
+                <svg>
+                    <circle/>
+                </svg>
+            </div>
+            <div id="circle2" class="circle">
+                <svg>
+                    <circle/>
+                </svg>
+            </div>
+            <div id="circle3" class="circle">
+                <svg>
+                    <circle/>
+                </svg>
+            </div>
+            <div id="circle4" class="circle">
+                <svg>
+                    <circle/>
+                </svg>
+            </div>
+            <!--<div role="alert" class="col-xs-12 pad-bot-15">-->
+                <!--<span class="col-xs-12" ng-if="formData.title.length < maxlength">Characters left: {{maxlength - formData.title.length}}</span>-->
+                <!--<span class="col-xs-12 error" ng-if="formData.title.length === maxlength">Time to check in!</span>-->
+            <!--</div>-->
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+</div>
+
