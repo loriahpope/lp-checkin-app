@@ -27,9 +27,7 @@ var options = {
             connectTimeoutMS: 30000
         },
         auto_reconnect: true
-    },
-    user: this.connectionParams.username,
-    pass: this.connectionParams.password
+    }
 };
 // var connectionString = 'mongodb://localhost/checkInApp';
 // var connectionString = 'mongodb://lpope101:testdb123@ds157469.mlab.com:57469/heroku_8bhhl165';
