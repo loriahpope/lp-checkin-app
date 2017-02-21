@@ -6,7 +6,7 @@
   "author": "Loriah Pope",
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/damp-hamlet-65376.git"
+    "url": "https://github.com/loriahpope/lp-checkin-app.git"
   },
   "start": "node server.js",
   "dependencies": {

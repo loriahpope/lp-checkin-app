@@ -7,6 +7,7 @@
 var express 	= require('express');	 // call express
 var app 		= express();		 // define our app using express
 var mongoose 	= require('mongoose');
+var mongoURI    = 'mongodb://localhost/checkInApp';
 var morgan = require('morgan');
 var bodyParser	= require('body-parser');
 var methodOverride = require('method-override');
@@ -21,9 +22,11 @@ var Profile = require('./app/controllers/profile');
 
 var options = { server: {socketOptions: { keepAlive: 1}}};
 // var connectionString = 'mongodb://localhost/checkInApp';
-var connectionString = 'mongodb://lpope101:testdb123@ds157469.mlab.com:57469/heroku_8bhhl165';
+// var connectionString = 'mongodb://lpope101:testdb123@ds157469.mlab.com:57469/heroku_8bhhl165';
 
-mongoose.connect(connectionString, options);		 // connect to our database
+// mongoose.connect(connectionString, options);		 // connect to our database
+
+mongoose.connect(process.env.MONGOLAB_URI || mongoURI);
 
 app.use(express.static(__dirname + '/app/public'));
 app.use(morgan('dev'));
