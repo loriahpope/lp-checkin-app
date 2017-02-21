@@ -15,10 +15,10 @@ var sentiment = require('sentiment');
 var passport = require('passport');
 var router = express.Router();
 
-var CheckIn 	= require(__dirname + './app/models/checkIn');
-var User 	= require(__dirname + './app/models/user');
-var Authenticate = require(__dirname + './app/config/passport');
-var Profile = require(__dirname + './app/controllers/profile');
+var CheckIn 	= require(__dirname + '/models/checkIn');
+var User 	= require(__dirname + '/models/user');
+var Authenticate = require(__dirname + '/config/passport');
+var Profile = require(__dirname + '/controllers/profile');
 
 var options = { server: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}};
 // var connectionString = 'mongodb://localhost/checkInApp';
