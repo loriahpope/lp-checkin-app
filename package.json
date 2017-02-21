@@ -6,6 +6,7 @@
   "author": "Loriah Pope",
   "license": "",
   "scripts": {
+    "testdb": "db-migrate reset --env test && db-migrate up --env test",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
