@@ -139,7 +139,7 @@ app.delete('/api/checkIns/:checkin_id', function(req, res) {
 
 // application ----------------
 app.all('*', function(req, res) {
-	res.sendfile('./app/public/index.html');
+	res.sendFile('./app/public/index.html');
 });
 
 // START THE SERVER
