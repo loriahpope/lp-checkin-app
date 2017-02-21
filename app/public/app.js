@@ -29,7 +29,7 @@ angular.module('checkInApp', ['ngRoute'])
 
             console.log('data:' + $scope.formData);
 
-            $http.post('//lp-checkin-app.herokuapp.com/api/checkIns', $scope.formData)
+            $http.post('http://lp-checkin-app.herokuapp.com/api/checkIns', $scope.formData)
                 .success(function(data) {
                     $scope.formData = {};
                     $scope.checkIns = data;
@@ -48,7 +48,7 @@ angular.module('checkInApp', ['ngRoute'])
     })
     .controller('checkInsCtrl', function($scope, $http) {
 
-        $http.get('//lp-checkin-app.herokuapp.com/api/checkIns')
+        $http.get('http://lp-checkin-app.herokuapp.com/api/checkIns')
             .success(function(data) {
                 $scope.checkIns = data;
                 console.log(data);
@@ -176,7 +176,7 @@ angular.module('checkInApp', ['ngRoute'])
     })
     .controller('checkInDetailsCtrl', function($scope, $http, $routeParams, $window) {
 
-        $http.get('//lp-checkin-app.herokuapp.com/api/checkIns/' + $routeParams.checkin_id)
+        $http.get('http://lp-checkin-app.herokuapp.com/api/checkIns/' + $routeParams.checkin_id)
             .success(function(data) {
                 $scope.checkIn = data;
                 console.log(data);
@@ -186,7 +186,7 @@ angular.module('checkInApp', ['ngRoute'])
             });
 
         $scope.deleteCheckIn = function() {
-            $http.delete('//lp-checkin-app.herokuapp.com/api/checkIns/' + $routeParams.checkin_id)
+            $http.delete('http://lp-checkin-app.herokuapp.com/api/checkIns/' + $routeParams.checkin_id)
                 .success(function(data) {
                     $scope.checkIns = data;
                     console.log(data);
